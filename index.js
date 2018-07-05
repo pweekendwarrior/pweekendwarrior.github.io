@@ -84,16 +84,16 @@ $( window ).on( "load", function(){ //make sure everything is loaded
 
   				 var st = $(this).scrollTop();
 
-           /**if(pg == 0 && !isMobile) {
+           if(pg == 0) {
            $('#landimg').css('transform', 'translateY(' +
-           -40*(st%$('#content0').height())/$('#content0').height() + '%)');
+           40*(st%$('#content0').height())/$('#content0').height() + '%)');
            //console.log('frontpage');
            }
-           if(pg == 7 && !isMobile) {
+           if(pg == 7) {
            $('#closeimg').css('transform', 'translateY(' +
            -40*(st-$('#content5').offset().top)/$('#content5').height() + 100 + '%)');
            //console.log('bookend');
-         }**/
+         }
            console.log(pg);
 
   				 if(Math.abs(lastScrollTop - st) <= delta)  return;

@@ -139,7 +139,7 @@ $( window ).on( "load", function(){ //make sure everything is loaded
            lastScrollTop = st;
            scrolltype = "none";
            //console.log('update');
-   }, 30));
+   }, 80));
   //end scrolling function
 
 //sliders init
@@ -409,6 +409,7 @@ $('._text').each(function( k, v ){
 if(isMobile){
 	//$('#desktop').hide();
   $('#mobile').hide();
+  $('#landimg').css('width', $(window).width()*2.5 + 'px').css('height', $(window).height()*2.5 + 'px');
   $('.text').each(function(){
     var cur = $(this);
     cur.css('width', '80vw').css('font-size', '4vw');

@@ -240,7 +240,7 @@ ul{
   left: 0;
   width: 100vw;
   position: absolute;
-  background: rgba(170, 57, 57, 1);
+  background: rgba(150, 37, 37, 1);
   font-size: 4vw;
   text-align: center;
 }
@@ -510,11 +510,10 @@ ul {
 .gd_on{
   transition: all .3s;
   position: fixed;
-  left: 0;
+  left: 0vw;
   top: 0vh;
   width: 100vw;
-  height: 80vh;
-  box-shadow: 0px 0px 0px 20vh rgba(0, 0, 0, 0.8);
+  height: 90vh;
   z-index: 12;
   background: black;
 }
@@ -526,7 +525,7 @@ ul {
   content: 'url(img\\close_arrow_red_circle_png.png)';
   width: auto;
   height: auto;
-  font-size: 1vw;
+  font-size: 2vw;
   padding: 10px;
   background: black;
   color: rgba(255, 255, 255, 1);
@@ -536,12 +535,10 @@ ul {
 }
 .right_side {
   position: absolute;
-  right: 3vw;
-  bottom: 50vh;
-  width: 14vw;
+  right: 5vw;
+  top: 40vh;
+  width: 20w;
   height: 60vh;
-  overflow-x: hidden;
-  overflow-y: auto;
   z-index: 3;
 }
 
@@ -685,6 +682,7 @@ ul {
   background-size: 250% 250%;
   font-size: 5vw;
   color: rgba(225, 234, 234, 1);
+  overflow: hidden;
 }
 #landimg {
   transition: all .6s ease-out;

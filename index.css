@@ -703,11 +703,18 @@ ul {
 }
 .white_link{
   position: relative;
-  top: 192vh;
+  top: 3vh;
   width: 100vw;
   text-align: center;
   color: white;
   font-size: 1vw;
+}
+#hold_contact {
+  position: absolute;
+  top: 192vh;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
 }
 #holdcloseimg {
   width: 100vw;

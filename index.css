@@ -687,7 +687,7 @@ ul {
   color: rgba(225, 234, 234, 1);
 }
 #landimg {
-  transition: all .2s;
+  transition: all .6s ease-out;
   height: 140vh;
   width: auto;
   top: 0;
@@ -695,6 +695,7 @@ ul {
   z-index: 0;
 }
 #closeimg {
+  transition: all .6s ease-in;
   width: auto;
   height: 160vh;
   left: 0;

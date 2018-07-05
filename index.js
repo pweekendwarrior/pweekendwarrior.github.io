@@ -84,9 +84,17 @@ $( window ).on( "load", function(){ //make sure everything is loaded
 
   				 var st = $(this).scrollTop();
 
+           if(pg == 0) {
            $('#landimg').css('transform', 'translateY(' +
-           -70*(st%$('#content0').height())/$('#content0').height() + '%)');
-           $('#closeimg').css('transform', 'translateY(' + -70*(st-$('#content5').offset().top)/$('#content5').height() + 100 + '%)');
+           -40*(st%$('#content0').height())/$('#content0').height() + '%)');
+           //console.log('frontpage');
+           }
+           if(pg == 7) {
+           $('#closeimg').css('transform', 'translateY(' +
+           -40*(st-$('#content5').offset().top)/$('#content5').height() + 100 + '%)');
+           //console.log('bookend');
+           }
+           console.log(pg);
 
   				 if(Math.abs(lastScrollTop - st) <= delta)  return;
 
@@ -100,7 +108,7 @@ $( window ).on( "load", function(){ //make sure everything is loaded
               if(scrolltype != "up")
               {
               scrolltype = "down";
-  						pg = Math.min(pg + 1, pages.length-1)
+  						pg = Math.floor(st/$(window).height());
   						var $elemen = pages[pg];
   						//var px = ($('#' + $elemen).offset().top);
   						//anim
@@ -117,7 +125,7 @@ $( window ).on( "load", function(){ //make sure everything is loaded
               if(scrolltype != "down")
               {
               scrolltype = "up";
-  						pg = Math.max(pg - 1, 0);
+  						pg = Math.floor(st/$(window).height());
   						var $elemen = pages[pg];
   						//var px = ($('#' + $elemen).offset().top);
   						//anim
@@ -130,7 +138,7 @@ $( window ).on( "load", function(){ //make sure everything is loaded
            //console.log(lastScrollTop + ', ' + st);
            lastScrollTop = st;
            scrolltype = "none";
-           console.log('update');
+           //console.log('update');
    }, 30));
   //end scrolling function
 

@@ -84,12 +84,12 @@ $( window ).on( "load", function(){ //make sure everything is loaded
 
   				 var st = $(this).scrollTop();
 
-           if(pg == 0) {
+           if(pg == 0 && !isMobile) {
            $('#landimg').css('transform', 'translateY(' +
            40*(st%$('#content0').height())/$('#content0').height() + '%)');
            //console.log('frontpage');
            }
-           if(pg == 7) {
+           if(pg == 7 && !isMobile) {
            $('#closeimg').css('transform', 'translateY(' +
            -40*(st-$('#content5').offset().top)/$('#content5').height() + 100 + '%)');
            //console.log('bookend');
@@ -349,12 +349,16 @@ $('.cont_gd_off_after').on('click',
     if(!$(this).hasClass('gd_on_after')) {
       $(this).toggleClass('gd_on_after').toggleClass('cont_gd_off_after').html('Close   ' +
       $(this).html().substring(8, $(this).html().length));
-      $(this).parent().toggleClass('gd_on').toggleClass('cont_gd_off').toggleClass('jumpin');
+      $(this).parent().toggleClass('gd_on').toggleClass('cont_gd_off').toggleClass('jumpin')
+      $(this).parent().offset().top = $(this).parent().parent().offset().top;
+      $(this).parent().offset().left = $(this).parent().parent().offset().left;
     }
     else {
       $(this).toggleClass('gd_on_after').toggleClass('cont_gd_off_after').html('Enlarge ' +
       $(this).html().substring(8, $(this).html().length));
       $(this).parent().toggleClass('gd_on').toggleClass('cont_gd_off').toggleClass('jumpin');
+      $(this).parent().offset().top = $(this).parent().offset().top;
+      $(this).parent().offset().left = $(this).parent().offset().left;
     }
   }
 );

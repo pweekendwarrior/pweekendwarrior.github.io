@@ -84,12 +84,12 @@ $( window ).on( "load", function(){ //make sure everything is loaded
 
   				 var st = $(this).scrollTop();
 
-           if(pg == 0 && !isMobile) {
+           if(pg == 0) {
            $('#landimg').css('transform', 'translateY(' +
            40*(st%$('#content0').height())/$('#content0').height() + '%)');
            //console.log('frontpage');
            }
-           if(pg == 7 && !isMobile) {
+           if(pg == 7) {
            $('#closeimg').css('transform', 'translateY(' +
            -40*(st-$('#content5').offset().top)/$('#content5').height() + 100 + '%)');
            //console.log('bookend');
@@ -139,7 +139,7 @@ $( window ).on( "load", function(){ //make sure everything is loaded
            lastScrollTop = st;
            scrolltype = "none";
            //console.log('update');
-   }, 80));
+   }, 90));
   //end scrolling function
 
 //sliders init
@@ -413,7 +413,7 @@ $('._text').each(function( k, v ){
 if(isMobile){
 	//$('#desktop').hide();
   $('#mobile').hide();
-  $('#landimg').css('width', $(window).width()*2.5 + 'px').css('height', $(window).height()*2.5 + 'px');
+  $('#landimg').css('width', $(window).width()*2.5 + 'px').css('height', $(window).height()*2.5 + 70 + 'px');
   $('.text').each(function(){
     var cur = $(this);
     cur.css('width', '80vw').css('font-size', '4vw');

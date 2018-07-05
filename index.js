@@ -84,12 +84,12 @@ $( window ).on( "load", function(){ //make sure everything is loaded
 
   				 var st = $(this).scrollTop();
 
-           if(pg == 0) {
+           if(pg == 0 && !isMobile) {
            $('#landimg').css('transform', 'translateY(' +
            -40*(st%$('#content0').height())/$('#content0').height() + '%)');
            //console.log('frontpage');
            }
-           if(pg == 7) {
+           if(pg == 7 && !isMobile) {
            $('#closeimg').css('transform', 'translateY(' +
            -40*(st-$('#content5').offset().top)/$('#content5').height() + 100 + '%)');
            //console.log('bookend');

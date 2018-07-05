@@ -687,6 +687,7 @@ ul {
   color: rgba(225, 234, 234, 1);
 }
 #landimg {
+  transition: all .2s;
   height: 140vh;
   width: auto;
   top: 0;

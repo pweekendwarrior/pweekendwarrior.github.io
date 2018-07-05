@@ -58,7 +58,7 @@ $( window ).on( "load", function(){ //make sure everything is loaded
 
   	lastScrollTop = 0, delta = $(window).innerHeight()*.02;
   	var scroll = 0;
-  				$(window).scroll(function(event){
+  				$(window).scroll(_.throttle(function(event){
 
             if(scrolltype == "override"){
               event.preventDefault();
@@ -86,16 +86,9 @@ $( window ).on( "load", function(){ //make sure everything is loaded
 
            $('#landimg').css('transform', 'translateY(' +
            -70*(st%$('#content0').height())/$('#content0').height() + '%)');
-           $('#closeimg').css('transform', 'translateY(' +
-           -30*(st-$('#content5').offset().top)/$('#content5').height() + 100 + '%)');
-           /**$('.fullimg').each(function(index, element){
-             var percent = (st%$('#content0').height())/$('#content0').height();
-             $(this).css('filter', 'sharpen(' +
-             100*percent + '%)');
-           });**/
+           $('#closeimg').css('transform', 'translateY(' + -70*(st-$('#content5').offset().top)/$('#content5').height() + 100 + '%)');
 
   				 if(Math.abs(lastScrollTop - st) <= delta)  return;
-           //console.log($(window).width()*.7 + ', ' + st + ', ' + lastScrollTop);
 
   				 if (st > lastScrollTop){
   						// downscroll code
@@ -137,7 +130,8 @@ $( window ).on( "load", function(){ //make sure everything is loaded
            //console.log(lastScrollTop + ', ' + st);
            lastScrollTop = st;
            scrolltype = "none";
-   });
+           console.log('update');
+   }, 30));
   //end scrolling function
 
 //sliders init

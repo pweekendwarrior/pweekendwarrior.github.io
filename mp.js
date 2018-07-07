@@ -248,16 +248,18 @@ $('#but_contact').on('click', function(){
 
 	$("#playpause").click(function(){
 	 if(pause){
-		 $("#playpause").attr('src', 'pause_reg.png').attr('width', '20%');
+		 $("#playpause").attr('src',
+     'https://github.com/pweekendwarrior/pweekendwarrior.github.io/blob/master/assets/pause_reg.png?raw=false')
+     .attr('width', '20%');
 		 audioElement.play();
 		 pause = false;
-		 //console.log('play');
 	 }
 	 else{
-		 $("#playpause").attr('src', 'play_reg.png').attr('width', '20%');
+		 $("#playpause").attr('src',
+     'https://github.com/pweekendwarrior/pweekendwarrior.github.io/blob/master/assets/play_reg.png?raw=false')
+     .attr('width', '20%');
 		 audioElement.pause();
 		 pause = true;
-		 //console.log('pause');
 	 }  });
 	 //
 	 $("#mobile_playpause").click(function(){
@@ -375,21 +377,11 @@ writebutton('NoWaH - I Am');
 
 // funcs
 	function writebutton(name){
-			//var sound = $("<source type='audio' src = 'file://songs\\" + bname + "' value='" + btext + "' id = '" + bname + "' class = 'song' onclick = 'bclic(" + bname + ")'/>");
-			//console.log("<input type= \'button\' value= \'" + name + "\' id = \'" + name + "\' class = \'songbutton\' onclick = \'playsong( \"" + name + "\" )\'/>");
 			var tmp = $("<button id = \'" + name
       + "\' class = \'songbutton\' onclick = \'playsong(\"" + name + "\")\'/>");
       tmp.html(name);
 			tmp.appendTo($("#songselection"));
 			songs.push(name);
-			//console.log('wrote ' + tmp.attr('id'));
-	}
-	function mobilewritebutton(name){ //mobile
-			//var sound = $("<source type='audio' src = 'file://songs\\" + bname + "' value='" + btext + "' id = '" + bname + "' class = 'song' onclick = 'bclic(" + bname + ")'/>");
-			var tmp = $("<input type=\'button\' value=\'" + name + "\' id = \'" + name + "\' class = \'mobile mobile_songbutton\' onclick = \'mobileplay(\"" + name + "\")\'/>");
-			tmp.appendTo($("#mobile_songs"));
-			songs.push(name);
-			//console.log('[mobile] wrote ' + tmp.attr('id'));
 	}
 	function playsong(name){
 		//console.log('name is ' + name);
@@ -422,13 +414,15 @@ writebutton('NoWaH - I Am');
 
 		audioElement.setAttribute('src', '' + 'songs\\' + name + '.mp3');
 		//song art
-      $('#songimage').attr('src', 'songs\\art\\' + name + '_art' + '.png');
+        $('#songimage').attr('src', 'songs\\art\\' + name + '_art' + '.png');
       //
 
       //
 
 		//play
-		$("#playpause").attr('src', 'pause.png').attr('width', '20%');
+		$("#playpause").attr('src',
+    'https://github.com/pweekendwarrior/pweekendwarrior.github.io/blob/master/assets/pause_reg.png?raw=false')
+    .attr('width', '20%');
 		audioElement.play();
 		pause = false;
 
@@ -451,53 +445,10 @@ writebutton('NoWaH - I Am');
 				$('#track').val(time);
 				audioElement.currentTime = time;
 				time = 0;
-				//audioElement.play();
 			}
 		});
-		console.log('playing ' + name);
-	}
-	function mobileplay(name){ //mobile
-	  last = songs.length-1;
-    if(songNum == songs.length-1){
-      songNum = 0;
-    }
-    if (name != 'random' && name != 'next') {
-			_element = $('#' + name);
-		}
-    if (name == 'next'){
-      songNum++;
-      name = songs[songNum];
-	    _element = $('#' + name);
-    }
-		else {
-      songs = shuffle(songs);
-      songNum = 0;
-			name = songs[songNum];
-	    _element = $('#' + name);
-	  }
-		audioElement.setAttribute('src', '' + 'songs\\' + name + '.mp3');
-		//play
-		$("#mobile_playpause").attr('src', 'pause.png');
-		audioElement.play();
-		pause = false;
-		audioElement.play();
-		audioElement.addEventListener('ended', function() {
-	    playsong('next');
-		}, false);
-		console.log('playing ' + name);
 	}
   //
-  function exists(path) {
-  	filename = path;
-
-  	var response = jQuery.ajax({
-  		url: filename,
-  		type: 'HEAD',
-  		async: false
-  	}).status;
-
-  	return (response != "200") ? false : true;
-  }
 //
 function r(min, max) {
         var minNumber = min; // le minimum
@@ -536,7 +487,7 @@ function r(min, max) {
       else if(menutype == 'banner'){
         //do nothing
       }
-      console.log(menutype);
+      //console.log(menutype);
     }
     function menuLanding(){
       if(menutype == 'landing'){
@@ -550,5 +501,5 @@ function r(min, max) {
         $('#menu').toggleClass('menu_banner').toggleClass('menu_landing');
         menutype = 'landing';
       }
-      console.log('*' + menutype);
+      //console.log('*' + menutype);
     }

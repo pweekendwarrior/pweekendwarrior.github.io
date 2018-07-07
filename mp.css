@@ -10,10 +10,10 @@ body{
 }
 #logo_img{
   position: absolute;
-  top: -60vh;
+  bottom: -200px;
   left: 0;
   transition: all 1s;
-  height: calc(80vw + 40vh);
+  height: calc(10vw + 90vh + 400px);
   width: 100vw;
   z-index: 3;
 }
@@ -328,10 +328,10 @@ button{
   height: auto;
 }
 #playpause{
-  width: calc(1vw + 1vh + 100px);
+  width: calc(1vw + 2vh + 100px);
   position: absolute;
   left: 11vw;
-  bottom: 14vh;
+  bottom: 10vh;
 }
 
 #nextsong{
@@ -381,9 +381,10 @@ button{
 }
 
 #volume {
-  width: 15vw;
+  width: calc(13vw + 5vh);
   position: absolute;
   right: 5vw;
+  height: calc(0.5vw + 2vh + 8px);
   top: 51vh;
   opacity: 1;
 }
@@ -478,6 +479,6 @@ input[type="range"]::-webkit-slider-thumb{
 /* The animation code */
 
 @keyframes jump{
-  0%{bottom: 10%;}
-  100%{bottom: 8%;}
+  0%{bottom: 8%;}
+  100%{bottom: 2%;}
 }

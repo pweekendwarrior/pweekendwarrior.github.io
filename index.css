@@ -299,6 +299,7 @@ ul {
   overflow: hidden;
   padding: 20px;
   margin-bottom: 5vh;
+  font-size: auto;
 }
 .gd_img {
   size: cover;

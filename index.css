@@ -58,7 +58,7 @@
   left: 0;
   top: 0;
   width: 100vw;
-  height: 120vh;
+  height: 110vh;
   z-index: 2;
 }
 .banner {
@@ -294,8 +294,8 @@ ul {
   transition: all .3s;
   z-index: 7;
   position: relative;
-  width: 11vw;
-  height: 7vw;
+  width: 8vw;
+  height: 5vw;
   overflow: hidden;
   padding: 20px;
   margin-bottom: 5vh;
@@ -347,7 +347,7 @@ ul {
   transition: all .3s;
   position: absolute;
   top: 0;
-  left: 0;
+  right: 0;
   content: 'url(img\\close_arrow_red_circle_png.png)';
   width: auto;
   height: auto;
@@ -511,17 +511,17 @@ ul {
   overflow: hidden;
 }
 #landimg {
-  transition: all .4s ease-out;
+  transition: all 0.06s;
   height: 160vh;
   width: auto;
   top: -10vh;
-  position: absolute;
+  position: fixed;
   z-index: 0;
 }
 #closeimg {
   transition: all .4s ease-in;
   width: auto;
-  height: 160vh;
+  height: 130vh;
   left: 0;
   top: 0;
   position: absolute;
@@ -529,15 +529,15 @@ ul {
 }
 .white_link{
   position: relative;
-  top: 3vh;
+  top: 1vh;
   width: 100vw;
   text-align: center;
   color: white;
-  font-size: 1vw;
+  font-size: 1.5vw;
 }
 #hold_contact {
   position: absolute;
-  top: 192vh;
+  top: 182vh;
   left: 0;
   width: 100vw;
   height: 100vh;
@@ -657,10 +657,10 @@ ul {
 }
 .big{
   position: absolute;
-  top: 180vh;
+  top: 170vh;
   width: 100vw;
   color: white;
-  font-size: 6vw;
+  font-size: 7vw;
   text-align: center;
   font-family: Times;
 }

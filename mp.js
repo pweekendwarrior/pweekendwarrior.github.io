@@ -46,8 +46,7 @@ $( window ).on( "load", function(){
 
 	  audioElement.setAttribute('src', "songs\\" + "Bluu - Droop" + ".mp3");
 	    audioElement.addEventListener('ended', function() {
-	        if(!isMobile) playsong('next');
-          else mobileplaysong('next');
+	        playsong('next');
 	    }, false);
 
 	    audioElement.addEventListener("canplay",function(){
@@ -62,14 +61,12 @@ $( window ).on( "load", function(){
 				if(time == 0){
 					var x = Math.floor(100*audioElement.currentTime/audioElement.duration) || 0;
 					//console.log(  x  );
-          if(!isMobile) {$('#track').val(x);}
-          else {$('#mobile_track').val(x);}
+          $('#track').val(x);
 				}
 				else {
 					audioElement.pause();
 					console.log(  'time'  );
-          if(!isMobile) {$('#track').val(time);}
-          else {$('#mobile_track').val(time);}
+          $('#track').val(time);
 					audioElement.currentTime = time;
 					time = 0;
 					audioElement.play();
@@ -81,19 +78,15 @@ $( window ).on( "load", function(){
 
   var num = 0; //pages
   var pages = new Array();
-  if(!isMobile){
    $( '.fullpage' ).each(function( index, element ){
        pages.push($( '.fullpage' )[index].id);
    });
-  }
-  if(!isChrome){
-    $( '#content1' ).css('background-position', '0');
-  }
+
   //scrolling
 
   	var pg = 0;
 
-  	lastScrollTop = 0, delta = $(window).innerHeight()*.02;
+  	lastScrollTop = 0, delta = $(window).height()*.02;
   	var scroll = 0;
   				$(window).scroll(_.throttle(function(event){
 
@@ -121,17 +114,7 @@ $( window ).on( "load", function(){
 
   				 var st = $(this).scrollTop();
 
-           if(pg == 0) {
-           $('#landimg').css('transform', 'translateY(' +
-           10*(st%$('#content0').height())/$('#content0').height() + '%)');
-           //console.log('frontpage');
-           }
-           if(pg == 7) {
-           $('#closeimg').css('transform', 'translateY(' +
-           10*(st-$('#content5').offset().top)/$('#content5').height() + 100 + '%)');
-           //console.log('bookend');
-         }
-           console.log(pg);
+           //console.log(pg);
 
   				 if(Math.abs(lastScrollTop - st) <= delta)  return;
 
@@ -176,7 +159,7 @@ $( window ).on( "load", function(){
            lastScrollTop = st;
            scrolltype = "none";
            //console.log('update');
-   }, 60));
+   }, 200));
   //end scrolling function
 
 

@@ -512,10 +512,10 @@ ul {
   overflow: hidden;
 }
 #landimg {
-  transition: all 0.06s;
+  transition: all 0.16s;
   height: 160vh;
   width: auto;
-  top: -10vh;
+  bottom: calc(-5vw - 5vh);
   position: fixed;
   z-index: 0;
 }

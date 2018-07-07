@@ -1,9 +1,3 @@
-var backimg;
-var backgrounds;
-var currentbg, currentmenu;
-var menuclasses, infos;
-var active;
-var activeSection;
 var scrolltype = "none";
 var canScroll = true;
 var isMobile = false;
@@ -95,92 +89,95 @@ $( window ).on( "load", function(){
   if(!isChrome){
     $( '#content1' ).css('background-position', '0');
   }
-//scrolling
+  //scrolling
 
-	var pg = 0;
+  	var pg = 0;
 
-	lastScrollTop = 0, delta = $(window).innerHeight()*.02;
-	var scroll = 0;
-				$(window).scroll(_.debounce(function(event){
+  	lastScrollTop = 0, delta = $(window).innerHeight()*.02;
+  	var scroll = 0;
+  				$(window).scroll(_.throttle(function(event){
 
-          if(scrolltype == "override"){
-            event.preventDefault();
-            return;
-          }
-
-				if(!isMobile){
-
-				if(!canScroll){  //lock mode
-					var $elemen = pages[pg];
-					//alert('#' + $elemen);
-					var px = ($('#' + $elemen).offset().top);
-					//anim
-					$('html').animate({
-					scrollTop: '' + px + 'px'
-					},
-					{
-					easing: 'swing',
-					duration: 100,
-					complete: function(){
-					lastScrollTop = $(this).scrollTop();
-					}
-					});
-				}
-
-        if (!$('html').is(':animated')){  //dont interrupt current scroll
-				event.preventDefault();
-				 var st = $(this).scrollTop();
-
-				 if(Math.abs(lastScrollTop - st) <= delta)  return;
-         //console.log($(window).width()*.7 + ', ' + st + ', ' + lastScrollTop);
-
-				 if (st > lastScrollTop){
-						// downscroll code
-            //events
-            if(st > $(window).height()*.1 && lastScrollTop < $(window).height()*.1){
-            menuBanner();
+            if(scrolltype == "override"){
+              event.preventDefault();
+              return;
             }
-            //!events
-            if(scrolltype != "up")
-            {
-            scrolltype = "down";
-						pg = Math.min(pg + 1, pages.length-1)
-						var $elemen = pages[pg];
-						var px = ($('#' + $elemen).offset().top);
-						//anim
-            lastScrollTop = px;
-            scrolltype = "none";
-						//!anim
-            }
-				 }
-				 else {
-						// upscroll code
-            //events
-            if(st < $(window).height()*.1 && lastScrollTop > $(window).height()*.1){
-            menuLanding();
-            }
-            //!events
-            if(scrolltype != "down")
-            {
-            scrolltype = "up";
-						pg = Math.max(pg - 1, 0);
-						var $elemen = pages[pg];
-						var px = ($('#' + $elemen).offset().top);
-						//anim
-            lastScrollTop = px;
-            scrolltype = "none";
-						//!anim
-            }
-				 }
-		 }
-		 else{
 
-			 event.preventDefault();
+  				if(!canScroll){  //lock mode
+  					var $elemen = pages[pg];
+  					//alert('#' + $elemen);
+  					var px = ($('#' + $elemen).offset().top);
+  					//anim
+  					$('html').animate({
+  					scrollTop: '' + px + 'px'
+  					},
+  					{
+  					easing: 'swing',
+  					duration: 100,
+  					complete: function(){
+  					lastScrollTop = $(this).scrollTop();
+  					}
+  					});
+  				}
 
-		 }
-	 }
- }, 5));
-//end scrolling function
+  				 var st = $(this).scrollTop();
+
+           if(pg == 0) {
+           $('#landimg').css('transform', 'translateY(' +
+           10*(st%$('#content0').height())/$('#content0').height() + '%)');
+           //console.log('frontpage');
+           }
+           if(pg == 7) {
+           $('#closeimg').css('transform', 'translateY(' +
+           10*(st-$('#content5').offset().top)/$('#content5').height() + 100 + '%)');
+           //console.log('bookend');
+         }
+           console.log(pg);
+
+  				 if(Math.abs(lastScrollTop - st) <= delta)  return;
+
+  				 if (st > lastScrollTop){
+  						// downscroll code
+              //events
+              if(st > $(window).height()*.1 && lastScrollTop < $(window).height()*.1){
+              menuBanner();
+              }
+              //!events
+              if(scrolltype != "up")
+              {
+              scrolltype = "down";
+  						pg = Math.floor(st/$(window).height());
+  						var $elemen = pages[pg];
+  						//var px = ($('#' + $elemen).offset().top);
+  						//anim
+  						//!anim
+              }
+  				 }
+  				 else {
+  						// upscroll code
+              //events
+              if(st < $(window).height()*.1 && lastScrollTop > $(window).height()*.1){
+              menuLanding();
+              }
+              //!events
+              if(scrolltype != "down")
+              {
+              scrolltype = "up";
+  						pg = Math.floor(st/$(window).height());
+  						var $elemen = pages[pg];
+  						//var px = ($('#' + $elemen).offset().top);
+  						//anim
+  						//!anim
+              }
+  				 }
+
+           //check_if_in_view();
+
+           //console.log(lastScrollTop + ', ' + st);
+           lastScrollTop = st;
+           scrolltype = "none";
+           //console.log('update');
+   }, 60));
+  //end scrolling function
 
 
  $('#but_stream').on('click', function(){
@@ -233,12 +230,12 @@ $('#but_contact').on('click', function(){
 });
 
    $("#logo_img").on('click', function(){
-     $("#logo_img").toggleClass('logo_clicked');
+     //$("#logo_img").toggleClass('logo_clicked');
    });
 
 	 $("#action_arrow").click(function(){
 	 	$('html').animate({
-	 	scrollTop: '' + $("#content1").offset().top + 'px'
+	 	scrollTop: '' + $("#content1").offset().top*1.1 + 'px'
 	 	},
 	 	{
 	 	easing: 'swing',
@@ -309,12 +306,6 @@ $('#but_contact').on('click', function(){
 		});
 
 
-    /**$('#menuicon').click(function(){
-      $('#menuicon').toggleClass('appear');
-      $('#menuicon').toggleClass('disappear');
-    });**/
-
-
     $('#mobile_volume').on('input', function(event, ui) {
       var calc = Math.floor(parseInt($('#mobile_volume').val()))/100 || 0;
       audioElement.volume = calc;
@@ -343,11 +334,12 @@ $('#but_contact').on('click', function(){
 
 //mobile site
 if(isMobile){
-	$('#desktop').hide();
+  $('#mobile').hide();
+	//$('#desktop').hide();
 	//
-  mobilewritebutton('Chlo - Disney');
-	mobilewritebutton('Bluu - Droop');
-	mobilewritebutton('Bluu - Resignation ft NoWaH');
+  //mobilewritebutton('Chlo - Disney');
+	//mobilewritebutton('Bluu - Droop');
+	//mobilewritebutton('Bluu - Resignation ft NoWaH');
 
 
 
@@ -366,9 +358,6 @@ if(isMobile){
 if(!isMobile){
 	$('#mobile').hide();
 	//
-  writebutton('Chlo - Disney');
-	writebutton('Bluu - Droop');
-	writebutton('NoWaH - I Am');
 
 
 
@@ -388,7 +377,9 @@ if(!isMobile){
 
 }
 
-
+writebutton('Chlo - Disney');
+writebutton('Bluu - Droop');
+writebutton('NoWaH - I Am');
 
 
 
@@ -403,7 +394,9 @@ if(!isMobile){
 	function writebutton(name){
 			//var sound = $("<source type='audio' src = 'file://songs\\" + bname + "' value='" + btext + "' id = '" + bname + "' class = 'song' onclick = 'bclic(" + bname + ")'/>");
 			//console.log("<input type= \'button\' value= \'" + name + "\' id = \'" + name + "\' class = \'songbutton\' onclick = \'playsong( \"" + name + "\" )\'/>");
-			var tmp = $("<input type= \'button\' value= \'" + name + "\' id = \'" + name + "\' class = \'draw meet songbutton\' onclick = \'playsong(\"" + name + "\")\'/>");
+			var tmp = $("<button id = \'" + name
+      + "\' class = \'songbutton\' onclick = \'playsong(\"" + name + "\")\'/>");
+      tmp.html(name);
 			tmp.appendTo($("#songselection"));
 			songs.push(name);
 			//console.log('wrote ' + tmp.attr('id'));
@@ -446,14 +439,7 @@ if(!isMobile){
 
 		audioElement.setAttribute('src', '' + 'songs\\' + name + '.mp3');
 		//song art
-      $('#songimage').attr('src', 'art\\' + name + '_art' + '.png');
-      console.log('(art) exists');
-      $('#songimage').on('error', function()
-      {
-        $('#songimage').attr('src', '' + 'placeholder_song_title' + '.png');
-        console.log('(art) does not exist');
-      });
-
+      $('#songimage').attr('src', 'songs\\art\\' + name + '_art' + '.png');
       //
 
       //

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<title>BTS</title>
+<!-- Body -->
+
+
+		<body id = 'body'>
+			<div id = "desktop">
+
+				<div id = "menuholder">
+
+					<img id = "menu_logo" src = "BTS_ Logo_Small.png"></img>
+
+					<div id = "menu" class = "menu_landing">
+
+
+
+					<div id = "but_stream" class = "nav_button">Stream</div>
+					<div id = "but_lease" class = "nav_button">Lease</div>
+					<div id = "but_contact" class = "nav_button">Contact</div>
+					<a href = "resumetise"><div id = "but_resume" class = "nav_button">Resume</div></a>
+
+					</div>
+				</div>
+
+			<div id = "content0" class = "fullpage">	<!-- landing (kessrecords) -->
+
+
+				<div id = "intro" class = "logo_unclicked">Streaming Site
+				</div>
+				<img id = "logo_img" src = "">
+				</img>
+
+				<div id = "front_menu">
+
+				</div>
+
+				<!--
+
+				<div id = "rechold"><img id = "kessrecs" src = "vinyl-record.png"></img></div><br>
+				-->
+
+				<img id = "action_arrow" src = "action_arrow_white.png">
+				</img>
+				<div id = "action_text">
+					<div>Tune in.
+					</div>
+				</div>
+
+				</div>
+
+
+			<div id = "content1" class = "fullpage">	<!-- player -->
+
+				<div id = "songselection" class = "hidesongselection">
+					<img id = "droparr2" src = "close_arrow_red_circle_png.png"></img><br><br>
+
+
+					<button id = "random" class = "songbutton"><div>Shuffle</div></button>
+
+
+
+				</div>
+
+
+
+				<div id = "songplayer">
+				<div id = "si_container">
+				<img id = "songimage" src = "placeholder_song_title.png"></img></div>
+				<div id = "songtitle">Play A Song</div><br>
+				<div id = "controls">
+					<button id = "droparr1">Songs</button>
+					<img id = "prevsong" src = "play.png" class = "control"></img>
+					<img id = "playpause" src = "play_reg.png" class = "control"></img><br>
+					<img id = "nextsong" src = "play.png" class = "control"></img>
+					<br>
+								<input class="range-slider__range" id = "track" type = "range" min = "0" max = "100" value = "0"></input>
+					<br><input id = "volume" orient = "vertical" type = "range" min = "0" max = "100" value = "100"></input>
+				</div>
+				</div>
+
+				<img class = "fullimg" src = "glo_city_png.png"></img>
+
+
+			</div>
+
+	<!-- <div id = "content2" class = "fullpage"> showcase beats/events (image slideshow)
+
+		<div class = "big">My Favorite Playlist</div>
+		<div id = "showcase">
+			<div id = "show1" class = "showcase">
+				Bluu - Droop <br> <img class = "showimg" src = "songs\Bluu - Droop_art.png"></img>
+			</div>
+			<div id = "show2" class = "showcase">
+				Chlo - Disney <br> <img class = "showimg" src = "placeholder_song_title.png"></img>
+			</div>
+			<div id = "show3" class = "showcase">
+				Chlo - Beach <br> <img class = "showimg" src = "placeholder_song_title.png"></img>
+			</div>
+			<div id = "show4" class = "showcase">
+				Follow My Instagram <br> <img class = "showimg" src = "placeholder_song_title.png"></img>
+			</div>
+		</div>
+
+	</div> -->
+
+	<div id = "content2" class = "fullpage">	<!-- beatcamp beats -->
+
+		<iframe src="https://www.beat.camp/widget/bts" scrolling="no" frameborder="0" class = "shop"></iframe>
+
+	</div>
+	<div id = "content3" class = "fullpage">	<!-- airbit beats -->
+
+		<iframe id ="mfs_html5" src="https://airbit.com/widgets/html5/?uid=237382&config=489357" frameborder="0" scrolling="no" class = "shop"></iframe>
+
+	</div>
+	<div id = "content4" class = "fullpage">	<!-- contact/links list -->
+
+			<div class = "big">Contact Me</div>
+
+					<a href = "https://soundcloud.com/user-286543667"><img src = ''></img><div class = 'white_link'>Soundcloud @Bluu Musiic</div></a>
+
+					<a href = "https://www.instagram.com/bluu_musiic/"><img src = ''></img><div class = 'white_link'>Instagram @Bluu Musiic</div></a>
+
+	</div>
+		<!-- <div id = "content6" class = "fullpage">	 about me
+
+			<div class = "big">About Me</div>
+
+		</div> -->
+	</body>
+	</div>
+	<!--
+
+	Mobile site
+
+	Mobile Site
+
+
+ -->
+	<div id = "mobile">
+		<div id = "mobile_landing" class = "mobile mobile_page">
+			<div class = "mobile_quote">Listen to the music!</div>
+			<div id = "mobile_songs" class = "mobile mobile_slide"></div>
+			<img id = "mobile_playpause" src = "play_reg.png" class = "mobile_control"></img>
+			<br>
+
+			<div id = "track_container" class="mobile range-slider">
+				<input class="mobile range-slider__range" id = "mobile_track" type = "range" min = "0" max = "100" value = "0"></input>
+				<span class="mobile range-slider__value">0</span>
+			</div>
+
+			<br><input id = "mobile_volume" type = "range" min = "0" max = "100" value = "50"></input>
+		</div>
+	</div>
+
+	<link rel="stylesheet" type="text/css" href="mp.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+	<script type="text/javascript" src="underscore.js"></script>
+	<script type="text/javascript" src="mp.js"></script>
+</html>

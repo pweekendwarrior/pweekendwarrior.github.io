@@ -25,7 +25,6 @@ $( window ).on( "load", function(){
 	if (/Mobi/.test(navigator.userAgent)) {
     // mobile!
 		isMobile = true;
-		//alert('Please use google chrome on a pc to optimally view this website.');
 	}
 	if(isChromium !== null
   && isChromium !== undefined
@@ -62,7 +61,7 @@ $( window ).on( "load", function(){
 				}
 				else {
 					audioElement.pause();
-					console.log(  'time'  );
+					//console.log(time);
           $('#track').val(time);
 					audioElement.currentTime = time;
 					time = 0;
@@ -158,8 +157,6 @@ $( window ).on( "load", function(){
            //console.log('update');
    }, 200));
   //end scrolling function
-
-
  $('#but_stream').on('click', function(){
    var destination = '' + ($('#content1').offset().top + $('#content1').height()*.1) + 'px';
    scrolltype = "override";
@@ -208,11 +205,7 @@ $('#but_contact').on('click', function(){
   }
   });
 });
-
-   $("#logo_img").on('click', function(){
-     //$("#logo_img").toggleClass('logo_clicked');
-   });
-
+  //
 	 $("#action_arrow").click(function(){
 	 	$('html').animate({
 	 	scrollTop: '' + $("#content1").offset().top*1.1 + 'px'
@@ -221,14 +214,6 @@ $('#but_contact').on('click', function(){
 	 	easing: 'swing',
 	 	duration: 370,
 	 	});
-	 });
-	 $("#droparr1").click(function(){
-	 	$("#songselection").toggleClass('hidesongselection').toggleClass('showsongselection');
-    $("#songplayer").css('opacity', '0');
-	 });
-	 $("#droparr2").click(function(){
-	 	$("#songselection").toggleClass('hidesongselection').toggleClass('showsongselection');
-    $("#songplayer").css('opacity', '1');
 	 });
 	 $('.songbutton').click(function(target){
  		playsong($(this).attr('id') + '');
@@ -241,7 +226,7 @@ $('#but_contact').on('click', function(){
 	});
 	$('#bck').click(function() {
 			audioElement.currentTime -= 5*1;
-	})*/;
+	})*/
 
 	$("#playpause").click(function(){
 	 if(pause){
@@ -258,7 +243,7 @@ $('#but_contact').on('click', function(){
 		 audioElement.pause();
 		 pause = true;
 	 }  });
-
+   //
    $('#prevsong').click(function(){
      playsong('prev');
    });
@@ -266,9 +251,6 @@ $('#but_contact').on('click', function(){
      playsong('next');
    });
 	 //
-
-
-
     $('#volume').on('input', function(event, ui) {
 			var calc = Math.floor(parseInt($('#volume').val()))/100 || 0;
 			audioElement.volume = calc;
@@ -286,69 +268,17 @@ $('#but_contact').on('click', function(){
 
 
 
-
-
-
-
-
-
-
-
-
 //mobile site
 if(isMobile){
   $('#mobile').hide();
-	//$('#desktop').hide();
-	//
-  //mobilewritebutton('Chlo - Disney');
-	//mobilewritebutton('Bluu - Droop');
-	//mobilewritebutton('Bluu - Resignation ft NoWaH');
-
-
-
-
-
-
-
-
+  //
 }
-
-
-
-
-
 //pc site
 if(!isMobile){
 	$('#mobile').hide();
 	//
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }
-
-//writebutton('Chlo - Disney');
-//writebutton('Bluu - Droop');
-//writebutton('NoWaH - I Am');
 writebutton('KDT - Moonrise');
-
-
-
-
-
 
 
 });

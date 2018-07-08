@@ -76,7 +76,7 @@ a{
 }
 #content3{
   z-index: 1;
-  background-image: url('glass_atoms_bg.png');
+  background: white;
   background-attachment: fixed;
   background-size: 200%;
   background-position: 70% 0;

@@ -261,20 +261,14 @@ $('#but_contact').on('click', function(){
 		 audioElement.pause();
 		 pause = true;
 	 }  });
+
+   $('#prevsong').click(function(){
+     playsong('prev');
+   });
+   $('#nextsong').click(function(){
+     playsong('next');
+   });
 	 //
-	 $("#mobile_playpause").click(function(){
-		if(pause){
-			$("#mobile_playpause").attr('src', 'pause_reg.png');
-			audioElement.play();
-			pause = false;
-			//console.log('play');
-		}
-		else{
-			$("#mobile_playpause").attr('src', 'play_reg.png');
-			audioElement.pause();
-			pause = true;
-			//console.log('pause');
-		}  });
 
 
 
@@ -289,19 +283,6 @@ $('#but_contact').on('click', function(){
 			console.log(calc*audioElement.duration);
 			//console.log(calc);
 		});
-
-
-    $('#mobile_volume').on('input', function(event, ui) {
-      var calc = Math.floor(parseInt($('#mobile_volume').val()))/100 || 0;
-      audioElement.volume = calc;
-      //console.log(calc);
-    });
-    $('#mobile_track').on('input', function(event, ui) {
-      var calc = $('#mobile_track').val()/100;
-      time = calc*audioElement.duration;
-      console.log(calc*audioElement.duration);
-      //console.log(calc);
-    });
 
 
 //both
@@ -362,9 +343,9 @@ if(!isMobile){
 
 }
 
-writebutton('Chlo - Disney');
-writebutton('Bluu - Droop');
-writebutton('NoWaH - I Am');
+//writebutton('Chlo - Disney');
+//writebutton('Bluu - Droop');
+//writebutton('NoWaH - I Am');
 
 
 
@@ -379,7 +360,7 @@ writebutton('NoWaH - I Am');
 	function writebutton(name){
 			var tmp = $("<button id = \'" + name
       + "\' class = \'songbutton\' onclick = \'playsong(\"" + name + "\")\'/>");
-      tmp.html(name);
+      tmp.html(name).css('background-image', 'url(songs\\art\\' + name + '_art.jpg)');
 			tmp.appendTo($("#songselection"));
 			songs.push(name);
 	}
@@ -387,12 +368,12 @@ writebutton('NoWaH - I Am');
 		//console.log('name is ' + name);
 	  last = songs.length-1;
 		//random button
-		if (name != 'random' && name != 'next') {
+		if (name != 'random' && name != 'next' && name != 'prev') {
 			_element = $('#' + name);
       console.log('(song) playing selected song -- ' + name);
 		}
     else if (name == 'next'){
-      if(songNum > songs.length-2){
+      if(songNum > songs.length-1){
         songNum = 0;
         console.log('(next) repeat playlist');
       }
@@ -402,6 +383,16 @@ writebutton('NoWaH - I Am');
       name = songs[songNum];
 	    _element = $('#' + name);
       console.log('(next) playing next song -- ' + name);
+    }
+    else if (name == 'prev'){
+      if(songNum == 0){
+        songNum = songs.length-1;
+        console.log('(prev) last in playlist');
+      }
+      else{  songNum--; }
+      name = songs[songNum];
+	    _element = $('#' + name);
+      console.log('(prev) playing prev song -- ' + name);
     }
 		else {
       songs = shuffle(songs);
@@ -414,7 +405,7 @@ writebutton('NoWaH - I Am');
 
 		audioElement.setAttribute('src', '' + 'songs\\' + name + '.mp3');
 		//song art
-        $('#songimage').attr('src', 'songs\\art\\' + name + '_art' + '.png');
+        $('#songimage').attr('src', 'songs\\art\\' + name + '_art' + '.jpg');
       //
 
       //

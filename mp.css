@@ -241,7 +241,6 @@ button{
 .menu_banner{
   color: white;
   transition: all .9s;
-  opacity: 1;
   top: 0;
   left: 0;
   position: fixed;
@@ -250,19 +249,14 @@ button{
   height: calc(4vh + 36px);
   background: rgba(63,94,251, 1);
   background: linear-gradient(343deg, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%);
-  /**
-  background: #833ab4;
-  background: -webkit-linear-gradient(to right, #fcb045, #fd1d1d, #833ab4);
-  background: linear-gradient(to right, #fcb045, #fd1d1d, #833ab4);
-  **/
   z-index: 7;
   font-size: calc(.5vw + 1vh + 10px);
 }
 .menu_landing{
   transition: all .9s;
-  opacity: 0;
   top: 0;
   left: 0;
+  color: black;
   position: fixed;
   display: block;
   opacity: 1;
@@ -271,7 +265,6 @@ button{
   height: calc(4vh + 36px);
   background: rgba(63, 94, 251, 0);
   background: radial-gradient(343deg, rgba(63,94,251,0) 0%, rgba(252,70,107,0) 100%);
-  color: black;
   font-size: calc(.5vw + 1vh + 10px);
 }
 #menu_logo{
@@ -285,8 +278,8 @@ button{
   transition: all 1s;
   z-index: 2;
   opacity: 1;
-  background: rgba(255, 255, 255, .6); /**background: rgb(63,94,251);**/
-  background: linear-gradient(343deg, rgba(63, 94, 251, .4) 0%, rgba(252, 70, 107, .4) 100%);
+  background: rgba(255, 255, 255, 1); /**background: rgb(63,94,251);**/
+  background: linear-gradient(343deg, rgba(63, 94, 251, 1) 0%, rgba(252, 70, 107, 1) 100%);
   position: absolute;
   width: 90vw;
   height: 70vh;
@@ -328,21 +321,32 @@ button{
   height: auto;
 }
 #playpause{
-  width: calc(1vw + 2vh + 100px);
+  width: calc(2vw + 2vh + 50px);
   position: absolute;
-  left: 11vw;
-  bottom: 10vh;
-}
-
-#nextsong{
-  width: 15%;
-  height: auto;
+  left: calc(18vw + 2vh + 26px);
+  bottom: 11vh;
+  cursor: pointer;
 }
 
 #prevsong{
-  transform: rotate(180deg);
-  width: 15%;
-  height: auto;
+  width: calc(1vw + 2vh + 100px);
+  position: absolute;
+  left: calc(14vw - 5vh + 16px);
+  bottom: 10vh;
+  font-size: calc(1vw + 2vh + 20px);
+  text-align: center;
+  line-height: 150%;
+  cursor: pointer;
+}
+#nextsong{
+  width: calc(1vw + 2vh + 100px);
+  position: absolute;
+  left: calc(24vw + 5vh + 16px);
+  bottom: 10vh;
+  font-size: calc(1vw + 2vh + 20px);
+  text-align: center;
+  line-height: 150%;
+  cursor: pointer;
 }
 
 #songtitle{
@@ -350,10 +354,10 @@ button{
   width: 30vw;
   height: 5vh;
   top: 51vh;
-  left: 5px;
+  left: 35vw;
   text-align: left;
   color: white;
-  font-size: 170%;
+  font-size: calc(160% + 8px);
 }
 
 .songbutton{
@@ -367,16 +371,11 @@ button{
   font-weight: 500;
   color: white;
   text-align: left;
-}
-.songbutton::before{
-  content: '';
   background-image: url('img\\BML_white.jpg');
-  position: absolute;
-  left: 0;
-  top: 0;
-  height: calc(6vh + 2vw + 16px);
-  width: calc(6vh + 2vw + 36px);
+  background-attachment: absolute;
+  background-position: 0 0;
   background-size:calc(6vh + 2vw + 36px);
+  background-repeat: no-repeat;
   z-index: 3;
 }
 
@@ -384,17 +383,18 @@ button{
   width: calc(13vw + 5vh);
   position: absolute;
   right: 5vw;
-  height: calc(0.5vw + 2vh + 8px);
-  top: 51vh;
+  top: 53vh;
   opacity: 1;
 }
 #volume::before{
-  content: '🔊';
+  content: '🔈';
   position: absolute;
-  left: -50px;
-  top: -30%;
+  left: -10px;
+  text-align: right;
+  top: 0;
   height: 100%;
-  font-size: 250%;
+  font-size: calc(.5vw + .5vh + 16px);
+  line-height: calc(.25vw + .5vh + 5px);
 }
 
 .shop{
@@ -435,8 +435,8 @@ input[type="range"]{
   outline: none;
   -webkit-appearance: none; /*Needed to reset default slider styles */
   width: 100%;
-  height: calc(1vh + 20px);
-  background-color: rgba(244, 212, 212, .5);
+  height: calc(.5vh + 10px);
+  background-color: rgba(0, 0, 0, .5);
   border: 1px solid darken(purple, 4%);
   transform: translate(0, -5px);
   border-radius: 10px;
@@ -457,15 +457,13 @@ input[type="range"]::-webkit-slider-thumb{
   width: calc(.2vw + .2vh + 16px);
   height: calc(1vh + 20px);
   border-radius: 30px;
-  background-color: rgba(5, 137, 104, 1);
+  background-color: rgba(243, 243, 243, 1);
   box-shadow: 0px 0px 3px darken(purple, 15%);
   transition: all 0.2s;
 }
 
   input[type="range"]::-webkit-slider-thumb:hover{
     background-color: darken(purple, 10%);
-    width: calc(1vw + 1vh + 16px);
-    height: calc(1vw + 1vh + 16px);
 }
   input[type="range"]::-webkit-slider-thumb:active{
     box-shadow: 0px 0px 1px darken(purple, 15%);

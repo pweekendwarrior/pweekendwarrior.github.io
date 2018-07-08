@@ -30,16 +30,6 @@ body{
   z-index: 1;
   height: 100vh;
 }
-#front_menu{
-  position: absolute;
-  top: 30vh;
-  left: 25vw;
-
-  width: 20vw;
-  height: auto;
-
-  z-index: 2;
-}
 .nav_button{
   transition: all .5s;
   display: inline-block;
@@ -239,8 +229,9 @@ button{
   padding: 10px;
 }
 .menu_banner{
-  color: white;
   transition: all .9s;
+  color: white;
+  font-size: calc(.5vw + 1vh + 10px);
   top: 0;
   left: 0;
   position: fixed;
@@ -250,13 +241,13 @@ button{
   background: rgba(63,94,251, 1);
   background: linear-gradient(343deg, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%);
   z-index: 7;
-  font-size: calc(.5vw + 1vh + 10px);
 }
 .menu_landing{
   transition: all .9s;
+  color: black;
+  font-size: calc(.5vw + 1vh + 10px);
   top: 0;
   left: 0;
-  color: black;
   position: fixed;
   display: block;
   opacity: 1;
@@ -265,7 +256,6 @@ button{
   height: calc(4vh + 36px);
   background: rgba(63, 94, 251, 0);
   background: radial-gradient(343deg, rgba(63,94,251,0) 0%, rgba(252,70,107,0) 100%);
-  font-size: calc(.5vw + 1vh + 10px);
 }
 #menu_logo{
   position: fixed;

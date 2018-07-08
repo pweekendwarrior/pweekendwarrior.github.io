@@ -44,7 +44,7 @@ $( window ).on( "load", function(){
 
 	  audioElement = document.createElement('audio');
 
-	  audioElement.setAttribute('src', "songs\\" + "Bluu - Droop" + ".mp3");
+	  audioElement.setAttribute('src', "songs\\" + "KDT - Moonrise" + ".mp3");
 	    audioElement.addEventListener('ended', function() {
 	        playsong('next');
 	    }, false);
@@ -346,6 +346,7 @@ if(!isMobile){
 //writebutton('Chlo - Disney');
 //writebutton('Bluu - Droop');
 //writebutton('NoWaH - I Am');
+writebutton('KDT - Moonrise');
 
 
 

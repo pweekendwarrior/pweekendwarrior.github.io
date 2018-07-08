@@ -17,9 +17,6 @@ body{
   width: 100vw;
   z-index: 3;
 }
-.logo_clicked{
-  transform: translate(-30vw, 0);
-}
 #content0{
   transition: all 1.5s;
   background-color: white;
@@ -59,12 +56,6 @@ a{
   width: 100vw;
   height: 130vh;
 }
-
-button{
-  min-width: 100px;
-  min-height: 40px;
-}
-
 .fullpage{
   transition: all 1.5s;
   background-repeat: no-repeat;
@@ -134,8 +125,6 @@ button{
   width: 10vw;
   left: 45vw;
   width: 10vw;
-  /*left: 70vw;
-  right: 20vw;*/
   height: auto;
   animation: jump 1s ease-in-out 0s infinite alternate;
   cursor: pointer;
@@ -147,8 +136,6 @@ button{
   width: 10vw;
   height: auto;
 }
-
-
 #kessrecs {
   transition: all 1s;
   animation: spin 1024s linear 0s infinite;
@@ -173,45 +160,7 @@ button{
   font-size: 6vw;
   text-align: center;
 }
-
-
-
-
-
-
 /** songs **/
-#droparr1{
-  position: absolute;
-  z-index: 0;
-  width: auto;
-  left: 2vw;
-  top: 2vh;
-  height: 4vh;
-  color: white;
-  background-color: rgba(94, 95, 96, 0);
-  font-size: auto;
-  padding-bottom: 2px;
-  border: solid 2px white;
-  font-weight: bold;
-  border-radius: 5px;
-  font-size: 143%;
-}
-#minimize{
-  position: absolute;
-  z-index: 0;
-  width: auto;
-  right: 2vw;
-  top: 2vh;
-  height: 4vh;
-  color: white;
-  background-color: rgba(94, 95, 96, 0);
-  border: solid 2px white;
-  padding-bottom: 2px;
-  font-size: 133%;
-  border-radius: 5px;
-  font-weight: bold;
-  color: white;
-}
 #intro{
   font-family: Papyrus;
   font-size: calc(3vw + .5vh + 5px);
@@ -222,7 +171,6 @@ button{
   font-weight: 800;
   width: 90vw;
   left: 5vw;
-  /*left: 52vw;*/
   z-index: 4;
   background-color: rgba(225, 225, 225, 0);
   border-radius: 15px;
@@ -279,12 +227,6 @@ button{
   overflow: hidden;
   font-size: 1vw;
 }
-
-#songplayer:hover{
-  transition: all 1s;
-  box-shadow: 6px 5px 7px 4px rgba(0,0,0,0.74);
-}
-
 #songselection{
   position: absolute;
   border: solid calc(.1vh + .1vw + 5px) rgba(0, 0, 0, 1);
@@ -296,7 +238,6 @@ button{
   overflow-x: hidden;
   overflow-y: scroll;
 }
-
 #songimage{
   transition: all 1s;
   width: calc(8vw + 36px);
@@ -305,7 +246,6 @@ button{
   bottom: 0vh;
   left: 0vw;
 }
-
 .control{
   width: 20%;
   height: auto;
@@ -317,7 +257,6 @@ button{
   bottom: 11vh;
   cursor: pointer;
 }
-
 #prevsong{
   width: calc(1vw + 2vh + 100px);
   position: absolute;
@@ -338,7 +277,6 @@ button{
   line-height: 150%;
   cursor: pointer;
 }
-
 #songtitle{
   position: absolute;
   width: 30vw;
@@ -349,7 +287,6 @@ button{
   color: white;
   font-size: calc(160% + 8px);
 }
-
 .songbutton{
   background-color: rgba(0, 0, 0, 1);
   border: solid calc(.1vh + .1vw + 5px) black;
@@ -368,8 +305,7 @@ button{
   background-repeat: no-repeat;
   z-index: 3;
 }
-
-#volume {
+#volume{
   width: calc(13vw + 5vh);
   position: absolute;
   right: 5vw;
@@ -386,7 +322,6 @@ button{
   font-size: calc(.5vw + .5vh + 16px);
   line-height: calc(.25vw + .5vh + 5px);
 }
-
 .shop{
   transition: all 1s;
   position: absolute;
@@ -399,21 +334,7 @@ button{
   box-shadow: 2px 2px 18px 10px rgba(0,0,0,0.3);
   opacity: 1;
 }
-.inner_blob{
-  transition: all 1.5s;
-  width: 80vw;
-  height: 80vh;
-  top: 20vh;
-  left: 10vw;
-  border-radius: 1vw;
-  position: absolute;
-  background-color: rgba(255, 255, 255 , 1);
-  text-shadow: -4px 3px 8px rgba(0, 0, 0, .54);
-  box-shadow: 6px 5px 60px 0px rgba(0,0,0,0.3);
-  z-index: -1;
-}
 /** sliders **/
-
 #track{
   position: absolute;
   right: 2vw;

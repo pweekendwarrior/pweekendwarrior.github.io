@@ -50,11 +50,8 @@ $( window ).on( "load", function(){
 	    }, false);
 
 	    audioElement.addEventListener("canplay",function(){
-	        //$("#length").text("Duration:");
-	        //$("#source").text("Source:");
-	        //$("#status").text("Status: Ready to play").css("color","green");
-					//$("#songimage").attr('src', "songs\\" + "droop" + "art" + ".png");
-					//$("#songimage").text('Bluu - Droop');
+					$("#songimage").attr('src', "songs\\" + "KDT - Moonrise" + "_art" + ".png");
+					$("#songtitle").text('KDT - Moonrise');
 	    });
 
 			audioElement.addEventListener("timeupdate",function(){

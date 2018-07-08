@@ -110,8 +110,14 @@ $( window ).on( "load", function(){
 
   				 var st = $(this).scrollTop();
 
-           //console.log(pg);
-
+           if(pg == 0) {
+             var ntc = (st%$('#content0').height())/$('#content0').height();
+           $('#logo_img').css('transform', 'translateY(' +
+           15*ntc + '%)')
+           .css('filter', 'blur(' +
+           10*ntc + 'px)');
+           //console.log('frontpage');
+           }
   				 if(Math.abs(lastScrollTop - st) <= delta)  return;
 
   				 if (st > lastScrollTop){
@@ -155,7 +161,7 @@ $( window ).on( "load", function(){
            lastScrollTop = st;
            scrolltype = "none";
            //console.log('update');
-   }, 200));
+   }, 10));
   //end scrolling function
  $('#but_stream').on('click', function(){
    var destination = '' + ($('#content1').offset().top + $('#content1').height()*.1) + 'px';
@@ -212,7 +218,7 @@ $('#but_contact').on('click', function(){
 	 	},
 	 	{
 	 	easing: 'swing',
-	 	duration: 370,
+	 	duration: 970,
 	 	});
 	 });
 	 $('.songbutton').click(function(target){
@@ -301,7 +307,7 @@ writebutton('KDT - Moonrise');
       console.log('(song) playing selected song -- ' + name);
 		}
     else if (name == 'next'){
-      if(songNum > songs.length-1){
+      if(songNum >= songs.length-1){
         songNum = 0;
         console.log('(next) repeat playlist');
       }
@@ -314,7 +320,7 @@ writebutton('KDT - Moonrise');
     }
     else if (name == 'prev'){
       if(songNum == 0){
-        songNum = songs.length-1;
+        songNum = Math.max(0, songs.length-1);
         console.log('(prev) last in playlist');
       }
       else{  songNum--; }

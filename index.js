@@ -94,7 +94,7 @@ $( window ).on( "load", function(){ //make sure everything is loaded
            10*(st-$('#content5').offset().top)/$('#content5').height() + 100 + '%)');
            //console.log('bookend');
          }
-           console.log(pg);
+           //console.log(pg);
 
   				 if(Math.abs(lastScrollTop - st) <= delta)  return;
 

@@ -113,17 +113,12 @@ a{
   width: 10vw;
 }
 #action_arrow{
-  color: white;
-  font-size: 2vw;
-  text-align: center;
   transition: all .5s;
   z-index: 4;
   position: absolute;
   bottom: 20vh;
-  width: 10vw;
-  left: 45vw;
-  width: 10vw;
-  height: auto;
+  width: calc(4vw + 6vh + 36px);
+  left: calc(50vw - calc(4vw + 6vh + 36px)/2);
   animation: jump 1s ease-in-out 0s infinite alternate;
   cursor: pointer;
 }

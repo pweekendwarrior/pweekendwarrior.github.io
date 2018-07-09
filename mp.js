@@ -123,9 +123,6 @@ $( window ).on( "load", function(){
   				 if (st > lastScrollTop){
   						// downscroll code
               //events
-              if(isMobile){
-                $('html').css('height', ($(window).height() - 70) + 'px');
-              }
               if(st > $(window).height()*.1 && lastScrollTop < $(window).height()*.1){
               menuBanner();
               }
@@ -143,9 +140,6 @@ $( window ).on( "load", function(){
   				 else {
   						// upscroll code
               //events
-              if(isMobile){
-                $('html').css('height', ($(window).height() - 0) + 'px');
-              }
               if(st < $(window).height()*.1 && lastScrollTop > $(window).height()*.1){
               menuLanding();
               }
@@ -160,13 +154,9 @@ $( window ).on( "load", function(){
   						//!anim
               }
   				 }
-
            //check_if_in_view();
-
-           //console.log(lastScrollTop + ', ' + st);
            lastScrollTop = st;
            scrolltype = "none";
-           //console.log($('html').css('height'));
            //console.log('update');
    }, 35));
   //end scrolling function

@@ -161,7 +161,7 @@ $( window ).on( "load", function(){
            lastScrollTop = st;
            scrolltype = "none";
            //console.log('update');
-   }, 10));
+   }, 30));
   //end scrolling function
  $('#but_stream').on('click', function(){
    var destination = '' + ($('#content1').offset().top + $('#content1').height()*.1) + 'px';

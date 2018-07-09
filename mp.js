@@ -110,7 +110,7 @@ $( window ).on( "load", function(){
 
   				 var st = $(this).scrollTop();
 
-           if(pg == 0) {
+           if(pg == 0 && !isMobile) {
              var ntc = (st%$('#content0').height())/$('#content0').height();
            $('#logo_img').css('transform', 'translateY(' +
            15*ntc + '%)')
@@ -123,6 +123,9 @@ $( window ).on( "load", function(){
   				 if (st > lastScrollTop){
   						// downscroll code
               //events
+              if(isMobile){
+                $('html').css('height', ($(window).height() - 70 + 'px'));
+              }
               if(st > $(window).height()*.1 && lastScrollTop < $(window).height()*.1){
               menuBanner();
               }
@@ -140,6 +143,9 @@ $( window ).on( "load", function(){
   				 else {
   						// upscroll code
               //events
+              if(isMobile){
+                $('html').css('height', ($(window).height() + 0 + 'px'));
+              }
               if(st < $(window).height()*.1 && lastScrollTop > $(window).height()*.1){
               menuLanding();
               }
@@ -161,7 +167,7 @@ $( window ).on( "load", function(){
            lastScrollTop = st;
            scrolltype = "none";
            //console.log('update');
-   }, 30));
+   }, 35));
   //end scrolling function
  $('#but_stream').on('click', function(){
    var destination = '' + ($('#content1').offset().top + $('#content1').height()*.1) + 'px';

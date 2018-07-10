@@ -326,6 +326,8 @@ ul {
   font-size: 1.8vw;
   padding: 10px;
   background: rgba(170, 57, 57, 1);
+  text-align: left;
+  padding-left: -20px;
   color: white;
   opacity: 1;
   z-index: 7;
@@ -520,9 +522,9 @@ ul {
   z-index: 0;
 }
 #closeimg {
-  transition: all .4s ease-in;
-  width: auto;
-  height: 130vh;
+  transition: all 0s ease-in;
+  width: 100vw;
+  height: 140vh;
   left: 0;
   top: 0;
   position: absolute;
@@ -550,7 +552,6 @@ ul {
   top: 0;
   position: absolute;
   z-index: 0;
-  overflow: none;
 }
 #direct_resume {
   top: 45vh;

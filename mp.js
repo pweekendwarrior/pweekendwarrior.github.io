@@ -38,40 +38,6 @@ $( window ).on( "load", function(){
 		//alert('Please use google chrome to optimally view this page.');
 	}
 	//dev det
-
-	//Sound
-
-	  audioElement = document.createElement('audio');
-
-	  audioElement.setAttribute('src', "songs\\" + "KDT - Moonrise" + ".mp3");
-	    audioElement.addEventListener('ended', function() {
-	        playsong('next');
-	    }, false);
-
-	    audioElement.addEventListener("canplay",function(){
-					$("#songimage").attr('src', "songs\\" + "KDT - Moonrise" + "_art" + ".png");
-					$("#songtitle").text('KDT - Moonrise');
-	    });
-
-			audioElement.addEventListener("timeupdate",function(){
-				if(time == 0){
-					var x = Math.floor(100*audioElement.currentTime/audioElement.duration) || 0;
-					//console.log(  x  );
-          $('#track').val(x);
-				}
-				else {
-					audioElement.pause();
-					//console.log(time);
-          $('#track').val(time);
-					audioElement.currentTime = time;
-					time = 0;
-					audioElement.play();
-				}
-			});
-      //audioElement.play();
-	//!Sound
-
-
   var num = 0; //pages
   var pages = new Array();
    $( '.fullpage' ).each(function( index, element ){
@@ -158,8 +124,41 @@ $( window ).on( "load", function(){
            lastScrollTop = st;
            scrolltype = "none";
            //console.log('update');
-   }, 200));
+   }, 35));
   //end scrolling function
+
+  //Sound
+
+	  audioElement = document.createElement('audio');
+
+	  audioElement.setAttribute('src', "songs\\" + "KDT - Moonrise" + ".mp3");
+	    audioElement.addEventListener('ended', function() {
+	        playsong('next');
+	    }, false);
+
+	    audioElement.addEventListener("canplay",function(){
+					$("#songimage").attr('src', "songs\\" + "KDT - Moonrise" + "_art" + ".png");
+					$("#songtitle").text('KDT - Moonrise');
+	    });
+
+			audioElement.addEventListener("timeupdate",function(){
+				if(time == 0){
+					var x = Math.floor(100*audioElement.currentTime/audioElement.duration) || 0;
+					//console.log(  x  );
+          $('#track').val(x);
+				}
+				else {
+					audioElement.pause();
+					//console.log(time);
+          $('#track').val(time);
+					audioElement.currentTime = time;
+					time = 0;
+					audioElement.play();
+				}
+			});
+      //audioElement.play();
+	//!Sound
+
  $('#but_stream').on('click', function(){
    var destination = '' + ($('#content1').offset().top + $('#content1').height()*.1) + 'px';
    scrolltype = "override";
@@ -221,15 +220,6 @@ $('#but_contact').on('click', function(){
 	 $('.songbutton').click(function(target){
  		playsong($(this).attr('id') + '');
  	});
-	/*$('#restart').click(function() {
-			audioElement.currentTime = 0;
-	});
-	$('#fwd').click(function() {
-			audioElement.currentTime += 5*1;
-	});
-	$('#bck').click(function() {
-			audioElement.currentTime -= 5*1;
-	})*/
 
 	$("#playpause").click(function(){
 	 if(pause){
@@ -254,17 +244,17 @@ $('#but_contact').on('click', function(){
      playsong('next');
    });
 	 //
-    $('#volume').on('input', function(event, ui) {
+    $('#volume').on('input', _.throttle(function(event, ui) {
 			var calc = Math.floor(parseInt($('#volume').val()))/100 || 0;
 			audioElement.volume = calc;
 			//console.log(calc);
-		});
-		$('#track').on('input', function(event, ui) {
+		}, 50));
+		$('#track').on('input', _.throttle(function(event, ui) {
 			var calc = $('#track').val()/100;
 			time = calc*audioElement.duration;
 			console.log(calc*audioElement.duration);
 			//console.log(calc);
-		});
+		}, 50));
 
 
 //both
@@ -281,7 +271,8 @@ if(!isMobile){
 	$('#mobile').hide();
 	//
 }
-writebutton('KDT - Moonrise');
+writebutton();
+
 
 
 });

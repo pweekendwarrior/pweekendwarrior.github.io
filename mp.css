@@ -8,11 +8,17 @@ body{
     animation-duration: 4s;
     animation-iteration-count: 1;
 }
+body::-webkit-scrollbar {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+body::-webkit-scrollbar-thumb {
+  background-color: lightblue;
+}
 #logo_img{
   position: absolute;
   bottom: -200px;
   left: 0;
-  transition: all 0.4s;
+  transition: all 0s;
   height: calc(10vw + 90vh + 400px);
   width: 100vw;
   z-index: 3;
@@ -63,8 +69,9 @@ a{
   overflow: hidden;
   width: 100vw;
   left: 0;
-  height: 130vh;
-  position: absolute;
+  height: 3000px;
+  max-height: 130vh;
+  position: relative;
   background-color: rgba(252, 252, 252, 1);
   z-index: -1;
 }
@@ -230,6 +237,12 @@ a{
   top: 5%;
   overflow-x: hidden;
   overflow-y: scroll;
+}
+#songselection::-webkit-scrollbar {
+  background-color: #aaa;
+}
+#songselection::-webkit-scrollbar-thumb {
+  background-color: lightblue;
 }
 #songimage{
   transition: all 1s;

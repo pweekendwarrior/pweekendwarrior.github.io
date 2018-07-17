@@ -1,12 +1,11 @@
 body{
   font-family: Arial, Helvetica, sans-serif;
+  transition: all .7s;
+  left: 0;
+  top: 0;
   overflow-x: hidden;
-  transition: all .5s;
-  filter: blur(0);
-  opacity: 1;
-    animation-name: pagestart;
-    animation-duration: 4s;
-    animation-iteration-count: 1;
+  margin: 0;
+  width: 100%;
 }
 body::-webkit-scrollbar {
   background-color: rgba(0, 0, 0, 0.5);
@@ -282,7 +281,7 @@ a{
   width: 30vw;
   height: 5vh;
   top: calc(43vh + 52px);
-  left: 35vw;
+  left: 40vw;
   text-align: left;
   color: white;
   font-size: calc(160% + 8px);
@@ -309,7 +308,7 @@ a{
   width: calc(13vw + 5vh);
   position: absolute;
   right: 5vw;
-  top: 53vh;
+  top: 57vh;
   opacity: 1;
 }
 #volume::before{
@@ -385,10 +384,23 @@ input[type="range"]::-webkit-slider-thumb{
   #volume{
     display: none;
   }
+  .fullpage{
+    height: 1200px;
+  }
+  .shop{
+    height: 700px;
+  }
+  #songplayer{
+    height: 700px;
+  }
 }
 
 /* The animation code */
 
+@keyframes pagestart{
+  0%{opacity: 0;}
+  100%{opacity: 1;}
+}
 @keyframes jump{
   0%{bottom: 8%;}
   100%{bottom: 2%;}

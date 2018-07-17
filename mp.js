@@ -62,7 +62,7 @@ $( window ).on( "load", function(){
   					//alert('#' + $elemen);
   					var px = ($('#' + $elemen).offset().top);
   					//anim
-  					$('html').animate({
+  					$('html, body').animate({
   					scrollTop: '' + px + 'px'
   					},
   					{
@@ -163,7 +163,7 @@ $( window ).on( "load", function(){
    var destination = '' + ($('#content1').offset().top + $('#content1').height()*.1) + 'px';
    scrolltype = "override";
    pg = 1;
-   $('html').animate({
+   $('html, body').animate({
    scrollTop: destination
    },
    {
@@ -179,7 +179,7 @@ $( window ).on( "load", function(){
   var destination = '' + ($('#content2').offset().top + $('#content2').height()*.1) + 'px';
   scrolltype = "override";
   pg = 2;
-  $('html').animate({
+  $('html, body').animate({
   scrollTop: destination
   },
   {
@@ -195,7 +195,7 @@ $('#but_contact').on('click', function(){
   var destination = '' + ($('#content4').offset().top + $('#content4').height()*.1) + 'px';
   scrolltype = "override";
   pg = 4;
-  $('html').animate({
+  $('html, body').animate({
   scrollTop: destination
   },
   {
@@ -209,7 +209,7 @@ $('#but_contact').on('click', function(){
 });
   //
 	 $("#action_arrow").click(function(){
-	 	$('html').animate({
+	 	$('html, body').animate({
 	 	scrollTop: '' + $("#content1").offset().top*1.1 + 'px'
 	 	},
 	 	{
@@ -263,12 +263,12 @@ $('#but_contact').on('click', function(){
 
 //mobile site
 if(isMobile){
-  $('#mobile').hide();
+
   //
 }
 //pc site
 if(!isMobile){
-	$('#mobile').hide();
+
 	//
 }
 writebutton('KDT - Moonrise');

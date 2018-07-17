@@ -42,6 +42,7 @@ $( window ).on( "load", function(){
   var pages = new Array();
    $( '.fullpage' ).each(function( index, element ){
        pages.push($( '.fullpage' )[index].id);
+       if(isMobile) element.toggleClass('.fullpage_mobile');
    });
 
   //scrolling
@@ -263,7 +264,10 @@ $('#but_contact').on('click', function(){
 
 //mobile site
 if(isMobile){
-
+  $('#songplayer').toggleClass('.songplayer_mobile');
+  $( '.shop' ).each(function( index, element ){
+      if(isMobile) element.toggleClass('.shop_mobile');
+  });
   //
 }
 //pc site

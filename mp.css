@@ -380,20 +380,21 @@ input[type="range"]::-webkit-slider-thumb{
 
 /** for mobile stuff **/
 
+.fullpage_mobile{
+  height: 800px;
+}
+.shop_mobile{
+  height: 700px;
+  top: 50px;
+}
+.songplayer_mobile{
+  height: 700px;
+  top: 50px;
+}
+
 @media only screen and (max-width: 920px) {
   #volume{
     display: none;
-  }
-  .fullpage{
-    height: 800px;
-  }
-  .shop{
-    height: 700px;
-    top: 50px;
-  }
-  #songplayer{
-    height: 700px;
-    top: 50px;
   }
 }
 

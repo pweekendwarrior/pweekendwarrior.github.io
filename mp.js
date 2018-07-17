@@ -124,7 +124,7 @@ $( window ).on( "load", function(){
            lastScrollTop = st;
            scrolltype = "none";
            //console.log('update');
-   }, 35));
+   }, 55));
   //end scrolling function
 
   //Sound
@@ -413,8 +413,5 @@ function r(min, max) {
       //console.log('*' + menutype);
     }
     function mobFunc(){
-      $('#songplayer').toggleClass('.songplayer_mobile');
-      $( '.shop' ).each(function( index, element ){
-          if(isMobile) element.toggleClass('.shop_mobile');
-      });
+
     }

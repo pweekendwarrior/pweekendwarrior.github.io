@@ -385,10 +385,12 @@ input[type="range"]::-webkit-slider-thumb{
 }
 .shop_mobile{
   height: 700px;
+  max-height: 700px;
   top: 50px;
 }
 .songplayer_mobile{
   height: 700px;
+  max-height: 700px;
   top: 50px;
 }
 

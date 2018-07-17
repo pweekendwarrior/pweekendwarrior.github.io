@@ -24,7 +24,8 @@ $( window ).on( "load", function(){
 	// device detection
 	if (/Mobi/.test(navigator.userAgent)) {
     // mobile!
-		isMobile = true;
+    isMobile = true;
+    mobFunc();
 	}
 	if(isChromium !== null
   && isChromium !== undefined
@@ -35,9 +36,7 @@ $( window ).on( "load", function(){
 	}
 	else{
 		isChrome = false;
-		//alert('Please use google chrome to optimally view this page.');
 	}
-	//dev det
   var num = 0; //pages
   var pages = new Array();
    $( '.fullpage' ).each(function( index, element ){
@@ -263,13 +262,6 @@ $('#but_contact').on('click', function(){
 
 
 //mobile site
-if(isMobile){
-  $('#songplayer').toggleClass('.songplayer_mobile');
-  $( '.shop' ).each(function( index, element ){
-      if(isMobile) element.toggleClass('.shop_mobile');
-  });
-  //
-}
 //pc site
 if(!isMobile){
 
@@ -419,4 +411,10 @@ function r(min, max) {
         menutype = 'landing';
       }
       //console.log('*' + menutype);
+    }
+    function mobFunc(){
+      $('#songplayer').toggleClass('.songplayer_mobile');
+      $( '.shop' ).each(function( index, element ){
+          if(isMobile) element.toggleClass('.shop_mobile');
+      });
     }

@@ -41,7 +41,6 @@ $( window ).on( "load", function(){
   var pages = new Array();
    $( '.fullpage' ).each(function( index, element ){
        pages.push($( '.fullpage' )[index].id);
-       if(isMobile) element.toggleClass('.fullpage_mobile');
    });
 
   //scrolling
@@ -413,5 +412,6 @@ function r(min, max) {
       //console.log('*' + menutype);
     }
     function mobFunc(){
-      $('#stylesheet1').attr('href', 'mp_mobile.css')
+      $('#stylesheet1').attr('href', 'mp_mobile.css');
+      $('content')
     }

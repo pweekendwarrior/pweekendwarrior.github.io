@@ -413,5 +413,5 @@ function r(min, max) {
       //console.log('*' + menutype);
     }
     function mobFunc(){
-
+      $('#stylesheet1').attr('href', 'mp_mobile.css')
     }

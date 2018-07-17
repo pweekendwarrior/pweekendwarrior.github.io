@@ -68,8 +68,7 @@ a{
   overflow: hidden;
   width: 100vw;
   left: 0;
-  height: 3000px;
-  max-height: 130vh;
+  height: 800px;
   position: relative;
   background-color: rgba(252, 252, 252, 1);
   z-index: 1;
@@ -217,8 +216,8 @@ a{
   background: linear-gradient(343deg, rgba(63, 94, 251, 1) 0%, rgba(252, 70, 107, 1) 100%);
   position: absolute;
   width: 90vw;
-  height: 70vh;
-  top: 30vh;
+  height: 700px;
+  top: 50px;
   left: 5vw;
   border: solid calc(.1vh + .1vw + 5px) white;
   overflow: hidden;
@@ -305,11 +304,7 @@ a{
   z-index: 3;
 }
 #volume{
-  width: calc(13vw + 5vh);
-  position: absolute;
-  right: 5vw;
-  top: 57vh;
-  opacity: 1;
+  display: none;
 }
 #volume::before{
   content: 'Volume';
@@ -325,9 +320,9 @@ a{
   transition: all 1s;
   position: absolute;
   left: 5vw;
-  top: 30vh;
   width: 90vw;
-  height: 82vh;
+  height: 700px;
+  top: 50px;
   border-radius: 0vw;
   opacity: 1;
 }
@@ -376,6 +371,7 @@ input[type="range"]::-webkit-slider-thumb{
   input[type="range"]::-webkit-slider-thumb:active{
     box-shadow: 0px 0px 1px darken(purple, 15%);
   }
+
 
 /* The animation code */
 

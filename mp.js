@@ -75,7 +75,7 @@ $( window ).on( "load", function(){
 
   				 var st = $(this).scrollTop();
 
-           if(pg == 0 && !isMobile) {
+           if(pg == 0) {
              var ntc = (st%$('#content0').height())/$('#content0').height();
            $('#logo_img').css('transform', 'translateY(' +
            15*ntc + '%)')

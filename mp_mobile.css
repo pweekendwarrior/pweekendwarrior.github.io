@@ -59,7 +59,7 @@ a{
   top: 0; left: 0;
   width: 100%; height: 100%;
   background: rgba(255, 255, 255, .9);
-  z-index: 20;
+  z-index: 30;
 }
 #comingsoon_t{
   font-size: calc(100px - 3vw);
@@ -70,7 +70,7 @@ a{
   left: 5%;
   width: 90%;
   height: auto;
-  z-index: 21;
+  z-index: 31;
 }
 .fullimg{
   position: absolute;
@@ -338,12 +338,13 @@ a{
 .shop{
   transition: all 1s;
   position: absolute;
-  left: 5vw;
-  width: 90vw;
+  left: 15vw;
+  width: 70vw;
   height: 700px;
-  top: 50px;
+  top: 150px;
   border-radius: 0vw;
   opacity: 1;
+  transform: scale(1.3);
 }
 /** sliders **/
 #track{

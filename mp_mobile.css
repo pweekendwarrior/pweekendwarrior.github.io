@@ -51,6 +51,27 @@ a{
   position: relative;
   z-index:2;
 }
+#comingsoon_b{
+  display: block;
+  opacity: 1;
+  filter: blur(3px);
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(255, 255, 255, .9);
+  z-index: 20;
+}
+#comingsoon_t{
+  font-size: calc(100px - 3vw);
+  color: black;
+  text-align: center;
+  position: absolute;
+  top: 45vh;
+  left: 5%;
+  width: 90%;
+  height: auto;
+  z-index: 21;
+}
 .fullimg{
   position: absolute;
   top: 0;

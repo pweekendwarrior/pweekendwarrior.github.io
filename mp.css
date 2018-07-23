@@ -113,16 +113,31 @@ a{
   height: 3000px;
   max-height: 100vh;
 }
-.black_link{
-  color: black;
-  font-size: 1.5em;
-}
 .white_link{
   position: relative;
-  top: 52vh;
+  top: 1vh;
   width: 100vw;
-  text-align: center;
+  text-align: left;
   color: white;
+  font-size: 1.5vw;
+}
+#contact_img{
+  position: absolute;
+  left: -21vw;
+  width: 25vw;
+  height: 25vw;
+  top: calc(2vh - 8vw);
+  mix-blend-mode: difference;
+}
+#hold_contact{
+  position: absolute;
+  top: 50vh;
+  left: 50vw;
+  width: 50vw;
+  height: 100vh;
+}
+.black_link{
+  color: black;
   font-size: 1.5em;
 }
 #action_text{
@@ -172,7 +187,7 @@ a{
 }
 .big{
   position: absolute;
-  top: 40vh;
+  top: 35vh;
   width: 100vw;
   color: white;
   font-size: 6vw;

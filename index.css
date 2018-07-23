@@ -534,15 +534,23 @@ ul {
   position: relative;
   top: 1vh;
   width: 100vw;
-  text-align: center;
+  text-align: left;
   color: white;
   font-size: 1.5vw;
 }
-#hold_contact {
+#contact_img{
+  position: absolute;
+  left: -21vw;
+  width: 25vw;
+  height: 25vw;
+  top: calc(2vh - 8vw);
+  mix-blend-mode: difference;
+}
+#hold_contact{
   position: absolute;
   top: 182vh;
-  left: 0;
-  width: 100vw;
+  left: 50vw;
+  width: 50vw;
   height: 100vh;
 }
 #holdcloseimg {

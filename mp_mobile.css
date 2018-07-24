@@ -110,17 +110,26 @@ a{
   height: 3000px;
   max-height: 100vh;
 }
+#hold_contact{
+  position: absolute;
+  top: 50vh;
+  left: 0vw;
+  width: 100vw;
+  height: 100vh;
+}
 .black_link{
   color: black;
   font-size: 1.5em;
 }
 .white_link{
   position: relative;
-  top: 52vh;
+  top: 1vh;
   width: 100vw;
   text-align: center;
   color: white;
-  font-size: 1.5em;
+  font-size: calc(16px + .4vw + .4vh);
+  text-decoration: none;
+  padding: 16px;
 }
 #action_text{
   color: white;

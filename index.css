@@ -534,24 +534,22 @@ ul {
   position: relative;
   top: 1vh;
   width: 100vw;
-  text-align: left;
+  text-align: center;
   color: white;
-  font-size: 1.5vw;
-}
-#contact_img{
-  position: absolute;
-  left: -21vw;
-  width: 25vw;
-  height: 25vw;
-  top: calc(2vh - 8vw);
-  mix-blend-mode: difference;
+  font-size: calc(16px + .4vw + .4vh);
+  text-decoration: none;
+  padding: 16px;
 }
 #hold_contact{
   position: absolute;
-  top: 182vh;
-  left: 50vw;
-  width: 50vw;
+  top: 178vh;
+  left: 0vw;
+  width: 100vw;
   height: 100vh;
+}
+.black_link{
+  color: black;
+  font-size: 1.5em;
 }
 #holdcloseimg {
   width: 100vw;

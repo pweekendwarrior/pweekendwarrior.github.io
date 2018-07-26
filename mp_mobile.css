@@ -15,10 +15,10 @@ body::-webkit-scrollbar-thumb {
 }
 #logo_img{
   position: absolute;
-  bottom: -200px;
+  top: 0px;
   left: 0;
   transition: all 0s;
-  height: calc(10vw + 90vh + 400px);
+  height: calc(2000px + 20vw);
   width: 100vw;
   z-index: 3;
 }
@@ -50,6 +50,22 @@ a{
   transition: all 1.5s;
   position: relative;
   z-index:2;
+}
+#buy{
+  position: absolute;
+  right: 2vw;
+  width: 400px;
+  height: 50px;
+  font-size: 36px;
+  text-align: center;
+  color: white;
+  background: rgb(131,58,180);
+  background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 74%, rgba(252,176,69,1) 100%);
+  bottom: 2vh;
+  padding: 5px;
+  border: solid 2px white;
+  border-radius: 5%;
+  cursor: pointer;
 }
 #comingsoon_b{
   display: block;
@@ -87,7 +103,7 @@ a{
   overflow: hidden;
   width: 100vw;
   left: 0;
-  height: 2000px;
+  height: calc(2000px + 20vw);
   position: relative;
   background-color: rgba(252, 252, 252, 1);
   z-index: 1;
@@ -291,7 +307,7 @@ a{
   width: calc(1vw + 1vh + 150px);
   position: absolute;
   left: calc(2vw + 1vh + 226px);
-  bottom: 180px;
+  bottom: 200px;
   height: calc(1vw + 10vh + 80px);
   cursor: pointer;
 }
@@ -299,7 +315,7 @@ a{
   width: calc(1vw + 1vh + 150px);
   position: absolute;
   left: calc(2vw + 1vh + 426px);
-  bottom: 180px;
+  bottom: 200px;
   height: calc(1vw + 10vh + 80px);
   cursor: pointer;
 }

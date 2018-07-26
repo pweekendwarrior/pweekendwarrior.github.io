@@ -78,9 +78,7 @@ $( window ).on( "load", function(){
            if(pg == 0 && !isMobile) {
              var ntc = (st%$('#content0').height())/$('#content0').height();
            $('#logo_img').css('transform', 'translateY(' +
-           15*ntc + '%)')
-           .css('filter', 'blur(' +
-           10*ntc + 'px)');
+           12*ntc + '%)');
            //console.log('frontpage');
            }
   				 if(Math.abs(lastScrollTop - st) <= delta)  return;
@@ -159,7 +157,7 @@ $( window ).on( "load", function(){
 	//!Sound
 
  $('#but_stream').on('click', function(){
-   var destination = '' + ($('#content1').offset().top + $('#content1').height()*.1) + 'px';
+   var destination = '' + ($('#content1').offset().top - $('#content1').height()*.1) + 'px';
    scrolltype = "override";
    pg = 1;
    $('html, body').animate({
@@ -171,11 +169,12 @@ $( window ).on( "load", function(){
    complete: function(){
    lastScrollTop = destination;
    scrolltype = "none";
+   menuBanner();
    }
    });
  });
  $('#but_lease').on('click', function(){
-  var destination = '' + ($('#content2').offset().top + $('#content2').height()*.1) + 'px';
+  var destination = '' + ($('#content2').offset().top - $('#content2').height()*.1) + 'px';
   scrolltype = "override";
   pg = 2;
   $('html, body').animate({
@@ -187,11 +186,12 @@ $( window ).on( "load", function(){
   complete: function(){
   lastScrollTop = destination;
   scrolltype = "none";
+  menuBanner();
   }
   });
 });
 $('#but_contact').on('click', function(){
-  var destination = '' + ($('#content4').offset().top + $('#content4').height()*.1) + 'px';
+  var destination = '' + ($('#content4').offset().top - $('#content4').height()*.1) + 'px';
   scrolltype = "override";
   pg = 4;
   $('html, body').animate({
@@ -203,6 +203,7 @@ $('#but_contact').on('click', function(){
   complete: function(){
   lastScrollTop = destination;
   scrolltype = "none";
+  menuBanner();
   }
   });
 });
@@ -266,7 +267,10 @@ if(!isMobile){
 
 	//
 }
-writebutton('KDT - Moonrise');
+writebutton('Bluu - Wreck It', 'next_song_gold.png');
+writebutton('Bluu - Celebrate', 'next_song_gold.png');
+writepurchasable('Hilario Yanez - Fantasia Op 17', 'yanez_art.jpg', 0.99);
+writepurchasable('Hilario Yanez - Cruz del Sur', 'yanez_art.jpg', 0.99);
 
 
 
@@ -274,13 +278,22 @@ writebutton('KDT - Moonrise');
 })(jQuery); //end of load reqs
 
 // funcs
-	function writebutton(name){
-			var tmp = $("<button id = \'" + name
-      + "\' class = \'songbutton\' onclick = \'playsong(\"" + name + "\")\'/>");
-      tmp.html(name).css('background-image', 'url(songs\\art\\' + name + '_art.jpg)');
-			tmp.appendTo($("#songselection"));
-			songs.push(name);
-	}
+function writebutton(name, art){
+    var tmp = $("<button id = \'" + name
+    + "\' class = \'songbutton\' onclick = \'playsong(\"" + name + "\")\'/>");
+    tmp.html(name).css('background-image', 'url(\'songs\\\\art\\\\' + art + '\')');
+    tmp.appendTo($("#songselection"));
+    songs.push(name);
+}
+function writepurchasable(name, art, cost){
+  var tmp = $("<button id = \'" + name
+  + "\' class = \'songbutton\' onclick = \'playsong(\"" + name + "\")\'/>");
+  tmp.html(name).css('background-image', 'url(\'songs\\\\art\\\\' + art + '\')');
+  var tmp_child = $('<div id = \'' + name + '_price\' class = \'songbutton_after\'>$' + cost + '</div>');
+  tmp_child.appendTo(tmp);
+  tmp.appendTo($("#songselection"));
+  songs.push(name);
+}
 	function playsong(name){
 		//console.log('name is ' + name);
 	  last = songs.length-1;
@@ -413,5 +426,5 @@ function r(min, max) {
     }
     function mobFunc(){
       $('#stylesheet1').attr('href', 'mp_mobile.css');
-      $('content')
+      $('#logo_img').attr('src', 'img\\bcard_web_land_mob_sm.jpg')
     }

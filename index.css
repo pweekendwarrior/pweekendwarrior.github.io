@@ -208,9 +208,8 @@
   padding-bottom: 50px;
   width: 100%;
   text-align: left;
-  font-size: 175%;
+  font-size: calc(4px + 40% + 1vw);
   overflow-y: scroll;
-  overflow-x: scroll;
   color: rgba(39, 65, 89, 1);
   list-style-position: inside;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0);
@@ -266,7 +265,7 @@
 .text li::before {
   content: '';
   position: absolute;
-  transform: translate(calc(-.5vw - 4px), calc(.5vh + 10px));
+  transform: translate(calc(-.5vw - 4px), calc(-6px + 330% - .3vw));
   width: calc(.25vw + 3px);
   height: calc(.25vw + 3px);
   background: rgba(39, 65, 89, 1);

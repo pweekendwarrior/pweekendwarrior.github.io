@@ -210,6 +210,7 @@
   text-align: left;
   font-size: 175%;
   overflow-y: scroll;
+  overflow-x: scroll;
   color: rgba(39, 65, 89, 1);
   list-style-position: inside;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0);

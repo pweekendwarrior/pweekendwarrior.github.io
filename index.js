@@ -517,4 +517,4 @@ $(window).resize(_.debounce(function(){
     //
 
   }
-}), 1000);
+}), 500);

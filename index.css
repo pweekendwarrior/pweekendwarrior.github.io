@@ -48,7 +48,7 @@
   transition: all .6s;
   position: fixed;
   transition: all 1s;
-  top: 10px;
+  top: 0px;
   left: calc(50% - 192.5px);
   z-index: 14;
   background: none;
@@ -59,6 +59,7 @@
 .dm:hover{
   background: rgba(0, 0, 0, .7);
   border-radius: 2%;
+  color: black;
 }
 .dm ul{
   list-style: none;

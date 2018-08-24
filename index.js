@@ -68,7 +68,7 @@ $(window).on( "load", function(){ //make sure everything is loaded
 
             var phv = hpage*current_height;
 
-            if(scrolltype == "override"){
+            /**if(scrolltype == "override"){
               event.preventDefault();
               return;
             }
@@ -88,7 +88,7 @@ $(window).on( "load", function(){ //make sure everything is loaded
   					lastScrollTop = $(this).scrollTop();
   					}
   					});
-  				}
+  				}**/
 
   				 var st = $(this).scrollTop();
 
@@ -150,7 +150,7 @@ $(window).on( "load", function(){ //make sure everything is loaded
            lastScrollTop = st;
            scrolltype = "none";
            //console.log('update');
-   }, 20));
+   }, 40));
   //end scrolling function
 
 //sliders init
@@ -165,108 +165,6 @@ $('.ba-slider').each(function(){
 });
 
 //end slider init code
-
-// L&R listeners
-  $('.mobile_right').on('click', function(){
-    //
-    var number = $(this).attr('id').toString().slice(1,2);
-    //
-    $(this).toggleClass('right_half_before').toggleClass('right_half_after');
-    //
-    if($(this).hasClass('right_half_after'))
-    {
-    $('#label_left_' + number).css('opacity', 0);
-    $('#label_right_' + number).css('opacity', 0);
-    $('.left_half_after').each(function(key, value){
-      //console.log('fixing left side');
-      //$(this).toggleClass('right_half_after').toggleClass('right_half_before');
-      if($(this).attr('id').toString().slice(1,2) == number){
-        $(this).toggleClass('left_half_after').toggleClass('left_half_before');
-      }
-    });
-  }
-  else {
-    $('#label_left_' + number).css('opacity', 1);
-    $('#label_right_' + number).css('opacity', 1);
-  }
-  //
-  });
-
-
-  $('.mobile_left').on('click', function(){
-    //
-    var number = $(this).attr('id').toString().slice(1,2);
-    //
-    $(this).toggleClass('left_half_before').toggleClass('left_half_after');
-    //
-    if($(this).hasClass('left_half_after'))
-    {
-    $('#mobile_label_left_' + number).css('opacity', 0);
-    $('#mobile_label_right_' + number).css('opacity', 0);
-    $('.right_half_after').each(function(key, value){
-      //console.log('fixing right side');
-      //$(this).toggleClass('right_half_after').toggleClass('right_half_before');
-      if($(this).attr('id').toString().slice(1,2) == number){
-        $(this).toggleClass('right_half_after').toggleClass('right_half_before');
-      }
-    });
-    }
-    else {
-      $('#mobile_label_left_' + number).css('opacity', 1);
-      $('#mobile_label_right_' + number).css('opacity', 1);
-    }
-    //
-  });
-  $('.l').on('click', function(){
-    var z_el = $(this).parent();
-    //
-    var number = z_el.attr('id').toString().slice(1,2);
-    //
-    z_el.toggleClass('left_half_before').toggleClass('left_half_after');
-    //
-    if(z_el.hasClass('left_half_after'))
-    {
-    $('#label_left_' + number).addClass('move_l');
-    $('#label_right_' + number).addClass('move_r');
-    $('.right_half_after').each(function(key, value){
-      //console.log('fixing right side');
-      //$(this).toggleClass('right_half_after').toggleClass('right_half_before');
-      if($(this).attr('id').toString().slice(1,2) == number){
-        $(this).removeClass('right_half_after').addClass('right_half_before');
-      }
-    });
-    }
-    else {
-      $('#label_left_' + number).removeClass('move_l');
-      $('#label_right_' + number).removeClass('move_r');
-    }
-    //
-  });
-  $('.r').on('click', function(){
-    var z_el = $(this).parent();
-    //
-    var number = z_el.attr('id').toString().slice(1,2);
-    //
-    z_el.toggleClass('right_half_before').toggleClass('right_half_after');
-    //
-    if(z_el.hasClass('right_half_after'))
-    {
-    $('#label_left_' + number).addClass('move_l');
-    $('#label_right_' + number).addClass('move_r');
-    $('.left_half_after').each(function(key, value){
-      //console.log('fixing left side');
-      //$(this).toggleClass('right_half_after').toggleClass('right_half_before');
-      if($(this).attr('id').toString().slice(1,2) == number){
-        $(this).removeClass('left_half_after').addClass('left_half_before');
-      }
-    });
-  }
-  else {
-    $('#label_left_' + number).removeClass('move_l');
-    $('#label_right_' + number).removeClass('move_r');
-  }
-  //
-  });
   $('.cont_gd_off_after').on('click',
     function() {
       if(!$(this).hasClass('gd_on_after')) {
@@ -335,6 +233,21 @@ $('#story').on('click', function(){
     menuLanding();
   }
   }
+});
+$('.dma').on('click', function(){
+  var topixel = $($(this).attr('href')).offset().top;
+  console.log(topixel);
+  $('html, body').animate({
+  scrollTop: '' + topixel + 'px'
+  },
+  {
+  easing: 'swing',
+  duration: 1800,
+  complete: function(){
+  lastScrollTop = topixel;
+  scrolltype = "none";
+  }
+  });
 });
 
 //mobile site
@@ -428,10 +341,10 @@ function r(min, max) {
 //
 
     function menuBanner(){
-      $('#dot_menu').css('transform', 'translateY(calc(90vh - 20px))');
+      $('#dot_menu').css('transform', 'translateY(calc(87vh + 7% - 40px))');
     }
     function menuLanding(){
-      $('#dot_menu').css('transform', 'translateY(0)');
+      $('#dot_menu').css('transform', 'translateY(0px)');
     }
 
     function displayEl(on, _el){
@@ -494,6 +407,32 @@ function scroll(top, time){
 
 
 $(window).resize(_.debounce(function(){
+  current_height = $(window).height();
+  if(Math.abs(last_height - current_height) > 90){
+    last_height = current_height;
+    set_height = current_height;
+
+    //resize sliders
+    $('.ba-slider').each(function(){
+      var cur = $(this);
+      var width = (cur.width()*slider_mod)+'px';
+      cur.find('.resize img').css('width', width);
+    });
+    //
+    $( '.fullpage' ).each(function( index, element ){
+     $(element).css('height', hpage*set_height*1 + 'px');
+   });
+
+   $( '.text' ).each(function( index, element ){
+    $(element).css('height', htext*set_height*1 + 'px');
+  });
+
+    //
+
+  }
+}), 500);
+
+$( window ).on( "orientationchange", _.debounce(function( event ){
   current_height = $(window).height();
   if(Math.abs(last_height - current_height) > 90){
     last_height = current_height;
